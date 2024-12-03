@@ -10,6 +10,10 @@
  * 
  */
 
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { LogInIcon } from 'lucide-react'
+
 export default function SignUp() {
     return (
         <>
@@ -26,8 +30,17 @@ export default function SignUp() {
                     <input type="text" id="password" name="password" required />
                 </div>
                 <div>
+                    <Link href="/submit">
+                    <Button about='Submit' aria-label='Submit' variant='default'>
+                        <LogInIcon className='w-4 h-4' />
+                        Submit
+                        </Button>
+                    </Link>
+                </div>
+                <div>
                     <button type="submit">Submit</button>
                 </div>
+                
             </form>
         </>
     )

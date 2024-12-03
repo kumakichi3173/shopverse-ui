@@ -11,21 +11,39 @@
  */
 
 import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { LogInIcon } from 'lucide-react'
+import styles from './styles.module.css'
 
 export default function LogIn() {
   return (
     <>
-      <div>
-        <Link href="/"><button>Sign up with Google</button></Link>
+      <div className={styles.buttoncontainer}>
+        <Link href="/gSignup">
+          <Button about='Google sign up' aria-label='Google sign up' variant='default'>
+            <LogInIcon className='w-4 h-4' />
+            Sign up with Google
+            </Button>
+        </Link>
       </div>
-      <div>
-        <Link href="/"><button>Sign up with Apple</button></Link>
+      <div className={styles.buttoncontainer}>
+        <Link href="/aSignup">
+          <Button about='Apple sign up' aria-label='Apple sign up' variant='default'>
+            <LogInIcon className='w-4 h-4' />
+            Sign up with Apple
+            </Button>
+        </Link>
       </div>
-      <div>
+      <div className={styles.buttoncontainer}>
         or
       </div>
-      <div>
-        <Link href="/signup"><button>Sign up</button></Link>
+      <div className={styles.buttoncontainer}>
+        <Link href="/signup">
+          <Button about='Sign up' aria-label='Sign up' variant='default'>
+            <LogInIcon className='w-4 h-4' />
+            Create a new account
+            </Button>
+        </Link>
       </div>
     </>
   )
