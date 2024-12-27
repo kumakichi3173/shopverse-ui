@@ -10,21 +10,35 @@
  * 
  */
 
-import React, {useState} from "react";
+'use client'; // This tells Next.js that the file is a client-side component
+
+import React, { useState } from "react";
 
 const ItemCounter = () => {
-    const [count, setCount] = useState(initialState: 0)
+  const [count, setCount] = useState(0);
 
-    const countUp = () => {
-        setCount( value: prevState => prevState +1)
-    }
+  const countUp = () => {
+    setTimeout(() => {
+      setCount(prevState => prevState + 1);
+    }, 100); // 1000 is 1 sec
+  };
 
-    const countDown = () => {
-        setCount( value: prevState => prevState -1)
-    }
-}
+  const countDown = () => {
+    setTimeout(() => {
+      setCount(prevState => prevState + 1);
+    }, 100); // 1000 is 1 sec
+  };
 
-return (
+  return (
+    <div>
+      <p>
+      quantity: 
+      <button onClick={countDown}>-</button>
+      <span>{count}</span>
+      <button onClick={countUp}>+</button>
+      </p>
+    </div>
+  );
+};
 
-    
-)
+export default ItemCounter;
