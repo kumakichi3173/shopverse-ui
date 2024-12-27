@@ -1,0 +1,7 @@
+.buttoncontainer {
+    display: flex;
+    width: 100%;
+    padding: 5px;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+}
