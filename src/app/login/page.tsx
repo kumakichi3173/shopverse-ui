@@ -11,51 +11,21 @@
  */
 
 import Link from 'next/link'
-import { Button } from '@/components/ui/button'
-import { User2Icon} from 'lucide-react'
-import styles from './styles.module.css'
-import { AppleMac, GoogleCircle } from 'iconoir-react'
 
 export default function LogIn() {
   return (
     <>
-      <div className={styles.buttoncontainer}>
-        <Link href="/gSignup">
-          <Button about='Google sign up' aria-label='Google sign up' variant='default'>
-            <GoogleCircle height={200} width={200} />
-            Sign up with Google
-            </Button>
-        </Link>
+      <div>
+        <Link href="/"><button>Sign up with Google</button></Link>
       </div>
-      <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"
-/>
-      <div className={styles.buttoncontainer}>
-        <Link href="/aSignup">
-          <Button about='Apple sign up' aria-label='Apple sign up' variant='default'>
-          <AppleMac  height={200} width={200} />
-            Sign up with Apple
-            </Button>
-        </Link>
+      <div>
+        <Link href="/"><button>Sign up with Apple</button></Link>
       </div>
-      <div className="relative">
-        <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t" />
-        </div>
-        <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-background px-2 text-muted-foreground">
-            Or continue with
-          </span>
-        </div>
+      <div>
+        or
       </div>
-      <div className={styles.buttoncontainer}>
-        <Link href="/signup">
-          <Button about='Sign up' aria-label='Sign up' variant='default'>
-            <User2Icon  height={200} width={200} />
-            Create a new account
-            </Button>
-        </Link>
+      <div>
+        <Link href="/signup"><button>Sign up</button></Link>
       </div>
     </>
   )
