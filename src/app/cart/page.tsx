@@ -25,7 +25,7 @@ const ItemCounter = () => {
 
   const countDown = () => {
     setTimeout(() => {
-      setCount(prevState => prevState + 1);
+      setCount(prevState => prevState - 1);
     }, 100); // 1000 is 1 sec
   };
 
@@ -37,6 +37,11 @@ const ItemCounter = () => {
       <span>{count}</span>
       <button onClick={countUp}>+</button>
       </p>
+      Color/Size
+      Delivery Method
+      Coupon 
+      Point
+      Total 
     </div>
   );
 };
