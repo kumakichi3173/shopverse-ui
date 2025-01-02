@@ -20,13 +20,14 @@ const ItemCounter = () => {
   const countUp = () => {
     setTimeout(() => {
       setCount(prevState => prevState + 1);
-    }, 100); // 1000 is 1 sec
+    // 1000 is 1 sec
+    }, 100); 
   };
 
   const countDown = () => {
     setTimeout(() => {
       setCount(prevState => prevState - 1);
-    }, 100); // 1000 is 1 sec
+    }, 100);
   };
 
   return (

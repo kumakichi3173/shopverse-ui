@@ -10,19 +10,21 @@
 //  * 
 //  */
 
-"use client"; // to use useState
+// TODO: use zod 
+
+// to use useState
+"use client";
 
 import React from "react";
 import { FieldValues, useForm } from "react-hook-form";
-
-import styles from './styles.module.css'
 import { Button } from '@/components/ui/button'
+import { Input } from "@/components/ui/input";
 
-export default function FormWithoutReactHookForm() {
+export default function Signup() {
   const {
     register,
     handleSubmit,
-    formState: { errors, isSubmitting }, 
+    formState: { errors, isSubmitting },
     reset,
     getValues,
   } = useForm();
@@ -36,22 +38,22 @@ export default function FormWithoutReactHookForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-y-2">
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col px-4 gap-y-2 items-center">
       <div>
         Create your account
       </div>
-      <input
+      <Input
         {...register('email', {
           required: "Email is required"
         })}
         type="email"
         placeholder="Email"
-        className="px-4 py-2 rounded"
+        className="grid w-full max-w-sm it"
       />
       {errors.email && (
         <p className="text-red-500">{errors.email.message?.toString()}</p>
       )}
-      <input
+      <Input
         {...register('password', {
           required: "Password is required",
           minLength: {
@@ -62,34 +64,32 @@ export default function FormWithoutReactHookForm() {
         type="password"
         minLength={8}
         placeholder="Password"
-        className="px-4 py-2 rounded"
+        className="grid w-full max-w-sm it"
       />
       {errors.password && (
         <p className="text-red-500">{errors.password.message?.toString()}</p>
       )}
-      <input
+      <Input
         {...register('confPassword', {
-          required: "Password is required",
+          required: "Confirm Password is required",
           validate: (value) =>
             value === getValues("password") || "Password must match",
         })}
         minLength={8}
         type="password"
         placeholder="Confirm password"
-        className="px-4 py-2 rounded"
+        className="grid w-full max-w-sm it"
       />
       {errors.confPassword && (
         <p className="text-red-500">{errors.confPassword.message?.toString()}</p>
       )}
-      <div className={styles.buttoncontainer}>
-          <Button 
-            disabled={isSubmitting}
-            type="submit"
-            aria-label='Submitxs' 
-            variant='default'>
-            Submit
-          </Button>
-      </div>
+      <Button
+        disabled={isSubmitting}
+        type="submit"
+        aria-label='Submitxs'
+        variant='default'>
+        Submit
+      </Button>
     </form>
   );
 }
