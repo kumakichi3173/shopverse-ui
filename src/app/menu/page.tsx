@@ -10,35 +10,5 @@
  * 
  */
 
-'use client'; // This tells Next.js that the file is a client-side component
+<img src="https://avatars.githubusercontent.com/u/30059275?v=4" alt="Picture of Saori">
 
-import React, { useState } from "react";
-
-const ItemCounter = () => {
-  const [count, setCount] = useState(0);
-
-  const countUp = () => {
-    setTimeout(() => {
-      setCount(prevState => prevState + 1);
-    }, 100); // 1000 is 1 sec
-  };
-
-  const countDown = () => {
-    setTimeout(() => {
-      setCount(prevState => prevState + 1);
-    }, 100); // 1000 is 1 sec
-  };
-
-  return (
-    <div>
-      <p>
-      quantity: 
-      <button onClick={countDown}>-</button>
-      <span>{count}</span>
-      <button onClick={countUp}>+</button>
-      </p>
-    </div>
-  );
-};
-
-export default ItemCounter;

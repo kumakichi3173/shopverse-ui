@@ -10,107 +10,86 @@
 //  * 
 //  */
 
-"use client"
+// TODO: use zod 
 
-import * as React from "react"
+// to use useState
+"use client";
 
-import { cn } from "@/lib/utils"
+import React from "react";
+import { FieldValues, useForm } from "react-hook-form";
 import { Button } from '@/components/ui/button'
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { LoaderCircle } from "lucide-react"
+import { Input } from "@/components/ui/input";
 
-import Link from 'next/link'
+export default function SignUp() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    reset,
+    getValues,
+  } = useForm();
 
-interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> { }
+  const onSubmit = async (data: FieldValues) => {
+    // TODO: submit to server
+    // ...
 
-export default function UserAuthForm() {
-    const [isLoading, setIsLoading] = React.useState<boolean>(false)
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+    reset();
+  };
 
-    async function onSubmit(event: React.SyntheticEvent) {
-        event.preventDefault()
-        setIsLoading(true)
-
-        setTimeout(() => {
-            setIsLoading(false)
-        }, 3000)
-    }
-
-    return (
-
-        <div className={cn("grid gap-6")}>
-            <div>
-                Create your account
-            </div>
-            <form method="post" action="/api/submit-signin">
-                <div>
-                    <label htmlFor="name">UserName:</label>
-                    <input type="text" id="name" name="name" required />
-                </div>
-                <div>
-                    <label htmlFor="password">Password:</label>
-                    <input type="text" id="password" name="password" required />
-                </div>
-            </form>
-            <form onSubmit={onSubmit}>
-                <div>
-                    <div className="grid gap-1">
-                        <Label className="sr-only" htmlFor="email">
-                            Email
-                        </Label>
-                        <Input
-                            id="email"
-                            placeholder="name@example.com"
-                            type="email"
-                            autoCapitalize="none"
-                            autoComplete="email"
-                            autoCorrect="off"
-                            disabled={isLoading}
-                        />
-                    </div>
-                    <Link href="/submit">
-                        <Button disabled={isLoading}>
-                            {isLoading && (
-                                <LoaderCircle className=" h-4 w-4 animate-spin" />
-                            )}
-                            Sign In with Email
-                        </Button>
-                    </Link>
-                </div>
-            </form>
-        </div>
-    )
+  return (
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col px-4 gap-y-2 items-center">
+      <div>
+        Create your account
+      </div>
+      <Input
+        {...register('email', {
+          required: "Email is required"
+        })}
+        type="email"
+        placeholder="Email"
+        className="grid w-full max-w-sm it"
+      />
+      {errors.email && (
+        <p className="text-red-500">{errors.email.message?.toString()}</p>
+      )}
+      <Input
+        {...register('password', {
+          required: "Password is required",
+          minLength: {
+            value: 8,
+            message: "Password must be at least 8 charcters",
+          },
+        })}
+        type="password"
+        minLength={8}
+        placeholder="Password"
+        className="grid w-full max-w-sm it"
+      />
+      {errors.password && (
+        <p className="text-red-500">{errors.password.message?.toString()}</p>
+      )}
+      <Input
+        {...register('confPassword', {
+          required: "Confirm Password is required",
+          validate: (value) =>
+            value === getValues("password") || "Password must match",
+        })}
+        minLength={8}
+        type="password"
+        placeholder="Confirm password"
+        className="grid w-full max-w-sm it"
+      />
+      {errors.confPassword && (
+        <p className="text-red-500">{errors.confPassword.message?.toString()}</p>
+      )}
+      <Button
+        disabled={isSubmitting}
+        type="submit"
+        aria-label='Submitxs'
+        variant='default'>
+        Submit
+      </Button>
+    </form>
+  );
 }
-
-// // react form ver.
-
-// import React from "react";
-// import { useForm } from "react-hook-form";
-
-// const MyForm = () => {
-//   const { register, handleSubmit, formState: { errors } } = useForm();
-
-//   const onSubmit = data => {
-//     console.log(data);
-//   };
-
-//   return (
-//     <form onSubmit={handleSubmit(onSubmit)}>
-//       <input 
-//         {...register("name", { required: "Name is required" })} 
-//         placeholder="Name" 
-//       />
-//       {errors.name && <p>{errors.name.message}</p>}
-
-//       <input 
-//         {...register("email", { required: "Email is required" })} 
-//         placeholder="Email" 
-//       />
-//       {errors.email && <p>{errors.email.message}</p>}
-
-//       <button type="submit">Submit</button>
-//     </form>
-//   );
-// };
-
-// export default MyForm;
