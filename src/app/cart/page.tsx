@@ -13,6 +13,7 @@
 'use client'; // This tells Next.js that the file is a client-side component
 
 import React, { useState } from "react";
+import styles from './styles.module.css'
 
 const ItemCounter = () => {
   const [count, setCount] = useState(0);
@@ -20,29 +21,45 @@ const ItemCounter = () => {
   const countUp = () => {
     setTimeout(() => {
       setCount(prevState => prevState + 1);
-    // 1000 is 1 sec
-    }, 100); 
+      // 1000 is 1 sec
+    }, 100);
   };
 
   const countDown = () => {
     setTimeout(() => {
-      setCount(prevState => prevState - 1);
-    }, 100);
+      setCount(prevState => {
+        if (prevState > 1) {
+          return prevState - 1;
+        }
+        return prevState;
+      });
+    }, 100); // 1000 is 1 sec
   };
 
+  const useEffect = () => {
+
+  };
   return (
     <div>
-      <p>
-      quantity: 
-      <button onClick={countDown}>-</button>
-      <span>{count}</span>
-      <button onClick={countUp}>+</button>
-      </p>
+      quantity:
+      <div className={styles.counterbutton}>
+        <div className={styles.counterbuttonwrapper}>
+          <div className={styles.counterbuttonspan}>
+            <button onClick={countDown}>-</button>
+          </div>
+          <div className={styles.countervalue}>
+            {count}
+          </div>
+          <div className={styles.counterbuttonspan}>
+            <button onClick={countUp}>+</button>
+          </div>
+        </div>
+      </div>
       Color/Size
       Delivery Method
-      Coupon 
+      Coupon
       Point
-      Total 
+      Total
     </div>
   );
 };
