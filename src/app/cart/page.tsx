@@ -36,9 +36,6 @@ const ItemCounter = () => {
     }, 100); // 1000 is 1 sec
   };
 
-  const useEffect = () => {
-
-  };
   return (
     <div>
       quantity:
