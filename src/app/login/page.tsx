@@ -12,31 +12,33 @@
 
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { User2Icon} from 'lucide-react'
+import { User2Icon } from 'lucide-react'
 import styles from './styles.module.css'
 import { AppleMac, GoogleCircle } from 'iconoir-react'
+import { Checkbox } from "@/components/ui/checkbox"
 
 export default function LogIn() {
   return (
     <>
+      <h1 className={styles.h1}>Sign in to your account</h1>
       <div className={styles.buttoncontainer}>
         <Link href="/gSignup">
           <Button about='Google sign up' aria-label='Google sign up' variant='default'>
             <GoogleCircle height={200} width={200} />
             Sign up with Google
-            </Button>
+          </Button>
         </Link>
       </div>
       <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"
-/>
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"
+      />
       <div className={styles.buttoncontainer}>
         <Link href="/aSignup">
           <Button about='Apple sign up' aria-label='Apple sign up' variant='default'>
-          <AppleMac  height={200} width={200} />
+            <AppleMac height={200} width={200} />
             Sign up with Apple
-            </Button>
+          </Button>
         </Link>
       </div>
       <div className="relative">
@@ -52,10 +54,19 @@ export default function LogIn() {
       <div className={styles.buttoncontainer}>
         <Link href="/signup">
           <Button about='Sign up' aria-label='Sign up' variant='default'>
-            <User2Icon  height={200} width={200} />
+            <User2Icon height={200} width={200} />
             Create a new account
-            </Button>
+          </Button>
         </Link>
+      </div>
+      <div className={styles.p1}>
+        <Checkbox id="terms" />
+        <label
+          htmlFor="terms"
+          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+        >
+          Stay signed in
+        </label>
       </div>
     </>
   )
