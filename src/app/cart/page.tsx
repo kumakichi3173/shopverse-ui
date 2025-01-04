@@ -23,6 +23,15 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 const ItemCounter = () => {
   const [count, setCount] = useState(0);
@@ -56,10 +65,33 @@ const ItemCounter = () => {
             <CardContent>
               <p>New without box</p>
               <p>GUCCI Japan</p>
-              <p>Color/Size</p>
-              <p>Delivery Method</p>
-              <p>Coupon</p>
-              <p>Point</p>
+              <Select>
+                <SelectTrigger className="w-[180px]">
+                  <SelectValue placeholder="Select Color" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectLabel>Select</SelectLabel>
+                    <SelectItem value="red">Red</SelectItem>
+                    <SelectItem value="blue">Blue</SelectItem>
+                    <SelectItem value="yellow">Yellow</SelectItem>
+                    <SelectItem value="green">Green</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+              <Select>
+                <SelectTrigger className="w-[180px]">
+                  <SelectValue placeholder="Select Size" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectLabel>Select</SelectLabel>
+                    <SelectItem value="small">Small</SelectItem>
+                    <SelectItem value="medium">Medium</SelectItem>
+                    <SelectItem value="large">Large</SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
               <div className="grid grid-rows-1 grid-cols-2 gap-1">
                 <p>Quantity</p>
                 <div className={styles.counterbutton}>
@@ -91,17 +123,20 @@ const ItemCounter = () => {
         </div>
         <Card className="w-[350px]">
           <CardHeader>
-            <p>item(s) $5</p>
-            <p>shipping to ?</p>
-            <p>tax $0.25</p>
+            <p>Item(s) $5</p>
+            <p>Shipping to ?</p>
+            <p>Tax $0.25</p>
+            <div className="border-t border-gray-300 my-4"></div>
             <CardTitle>Subtotal $5.25</CardTitle>
           </CardHeader>
           <CardContent>
+          <div className={styles.buttoncontainer}>
             <Button>Checkout</Button>
+            </div>
           </CardContent>
           <CardFooter className="flex justify-between">
             <p>Purchase protected by <Link href="/SaveForLater">
-            SSS Guarantee</Link></p>
+              SSS Guarantee</Link></p>
           </CardFooter>
         </Card>
       </div>
