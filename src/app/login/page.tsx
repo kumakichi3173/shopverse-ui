@@ -22,7 +22,7 @@ export default function LogIn() {
     <>
       <h1 className={styles.h1}>Sign in to your account</h1>
       <div className={styles.buttoncontainer}>
-        <Link href="/gSignup">
+        <Link href="/Signup">
           <Button about='Google sign up' aria-label='Google sign up' variant='default'>
             <GoogleCircle height={200} width={200} />
             Sign up with Google
