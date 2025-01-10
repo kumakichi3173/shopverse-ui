@@ -56,8 +56,8 @@ const ItemCounter = () => {
 
   return (
     <div>
-      <div className="grid grid-rows-1 grid-cols-2 gap-1">
-        <div className="grid grid-rows-1 grid-cols-2 gap-1">
+      <div className="flex justify-center">
+        <div className="flex">
           <Card className="w-[350px]">
             <CardHeader>
               <CardTitle>GUCCI womens ring</CardTitle>
@@ -130,8 +130,8 @@ const ItemCounter = () => {
             <CardTitle>Subtotal $5.25</CardTitle>
           </CardHeader>
           <CardContent>
-          <div className={styles.buttoncontainer}>
-            <Button>Checkout</Button>
+            <div className={styles.buttoncontainer}>
+              <Button>Checkout</Button>
             </div>
           </CardContent>
           <CardFooter className="flex justify-between">
@@ -139,8 +139,8 @@ const ItemCounter = () => {
               SSS Guarantee</Link></p>
           </CardFooter>
         </Card>
+      </div>      
       </div>
-    </div>
   );
 };
 
