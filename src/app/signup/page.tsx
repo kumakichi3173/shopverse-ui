@@ -17,6 +17,7 @@
 
 import React from "react";
 import { FieldValues, useForm } from "react-hook-form";
+import styles from './styles.module.css'
 import { Button } from '@/components/ui/button'
 import { Input } from "@/components/ui/input";
 
@@ -39,9 +40,10 @@ export default function SignUp() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col px-4 gap-y-2 items-center">
-      <div>
+      <h1 className={styles.h1}>
         Create your account
-      </div>
+      </h1>
+
       <Input
         {...register('email', {
           required: "Email is required"
