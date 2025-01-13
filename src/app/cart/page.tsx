@@ -46,10 +46,7 @@ const ItemCounter = () => {
   const countDown = () => {
     setTimeout(() => {
       setCount(prevState => {
-        if (prevState > 1) {
-          return prevState - 1;
-        }
-        return prevState;
+        return prevState - 1;
       });
     }, 100); // 1000 is 1 sec
   };
@@ -97,7 +94,7 @@ const ItemCounter = () => {
                 <div className={styles.counterbutton}>
                   <div className={styles.counterbuttonwrapper}>
                     <div className={styles.counterbuttonspan}>
-                      <button onClick={countDown}>-</button>
+                      <button onClick={countDown} disabled={count <= 0}>-</button>
                     </div>
                     <div className={styles.countervalue}>
                       {count}
@@ -139,8 +136,8 @@ const ItemCounter = () => {
               SSS Guarantee</Link></p>
           </CardFooter>
         </Card>
-      </div>      
       </div>
+    </div>
   );
 };
 
