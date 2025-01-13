@@ -43,8 +43,9 @@ import {
 import { Search } from "lucide-react"
 import styles from './styles.module.css'
 import Image from 'next/image';
+import ListItem from "../components/common/ListItem"
 
-const components: { title: string; href: string; description: string }[] = [
+const dropDownItems: { title: string; href: string; description: string }[] = [
     {
         title: "Alert Dialog",
         href: "/docs/primitives/alert-dialog",
@@ -138,13 +139,13 @@ export function Menu() {
                             <NavigationMenuTrigger>Women's'</NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                                    {components.map((component) => (
+                                    {dropDownItems.map((item) => (
                                         <ListItem
-                                            key={component.title}
-                                            title={component.title}
-                                            href={component.href}
+                                            key={item.title}
+                                            title={item.title}
+                                            href={item.href}
                                         >
-                                            {component.description}
+                                            {item.description}
                                         </ListItem>
                                     ))}
                                 </ul>
@@ -154,13 +155,13 @@ export function Menu() {
                             <NavigationMenuTrigger>Men's</NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                                    {components.map((component) => (
+                                    {dropDownItems.map((item) => (
                                         <ListItem
-                                            key={component.title}
-                                            title={component.title}
-                                            href={component.href}
+                                            key={item.title}
+                                            title={item.title}
+                                            href={item.href}
                                         >
-                                            {component.description}
+                                            {item.description}
                                         </ListItem>
                                     ))}
                                 </ul>
@@ -170,13 +171,13 @@ export function Menu() {
                             <NavigationMenuTrigger>Jewelry & accessories</NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                                    {components.map((component) => (
+                                    {dropDownItems.map((item) => (
                                         <ListItem
-                                            key={component.title}
-                                            title={component.title}
-                                            href={component.href}
+                                            key={item.title}
+                                            title={item.title}
+                                            href={item.href}
                                         >
-                                            {component.description}
+                                            {item.description}
                                         </ListItem>
                                     ))}
                                 </ul>
@@ -186,13 +187,13 @@ export function Menu() {
                             <NavigationMenuTrigger>Beauty & Health</NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                                    {components.map((component) => (
+                                    {dropDownItems.map((item) => (
                                         <ListItem
-                                            key={component.title}
-                                            title={component.title}
-                                            href={component.href}
+                                            key={item.title}
+                                            title={item.title}
+                                            href={item.href}
                                         >
-                                            {component.description}
+                                            {item.description}
                                         </ListItem>
                                     ))}
                                 </ul>
@@ -202,13 +203,14 @@ export function Menu() {
                             <NavigationMenuTrigger>Sports & Outdoors</NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                                    {components.map((component) => (
+                                    {dropDownItems.map((item) => (
                                         <ListItem
-                                            key={component.title}
-                                            title={component.title}
-                                            href={component.href}
+
+                                            key={item.title}
+                                            title={item.title}
+                                            href={item.href}
                                         >
-                                            {component.description}
+                                            {item.description}
                                         </ListItem>
                                     ))}
                                 </ul>
@@ -218,13 +220,13 @@ export function Menu() {
                             <NavigationMenuTrigger>Babies & Kids</NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                                    {components.map((component) => (
+                                    {dropDownItems.map((item) => (
                                         <ListItem
-                                            key={component.title}
-                                            title={component.title}
-                                            href={component.href}
+                                            key={item.title}
+                                            title={item.title}
+                                            href={item.href}
                                         >
-                                            {component.description}
+                                            {item.description}
                                         </ListItem>
                                     ))}
                                 </ul>
@@ -296,29 +298,4 @@ export function Menu() {
 
 export default Menu;
 
-const ListItem = React.forwardRef<
-    React.ElementRef<"a">,
-    React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-    return (
-        <li>
-            <NavigationMenuLink asChild>
-                <a
-                    ref={ref}
-                    className={cn(
-                        "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-                        className
-                    )}
-                    {...props}
-                >
-                    <div className="text-sm font-medium leading-none">{title}</div>
-                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                        {children}
-                    </p>
-                </a>
-            </NavigationMenuLink>
-        </li>
-    )
-})
-ListItem.displayName = "ListItem"
 
