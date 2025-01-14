@@ -42,15 +42,11 @@ export default function Orders() {
             </Breadcrumb>
             <h1 className={styles.h1}>Your orders</h1>
 
-            <div className="flex items-center">
-                <div>
-                    <div className="flex w-full max-w-sm items-center">
-                        <Input type="searchallorders" placeholder="Search all orders" />
-                        <Button about='Search all orders' aria-label='Search all orders' variant='default'>
-                            <Search height={200} width={200} />
-                        </Button>
-                    </div>
-                </div>
+            <div className="flex">
+                <Input type="searchallorders" placeholder="Search all orders" />
+                <Button about='Search all orders' aria-label='Search all orders' variant='default'>
+                    <Search height={200} width={200} />
+                </Button>
             </div>
         </>
     )
