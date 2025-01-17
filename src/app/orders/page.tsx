@@ -49,6 +49,7 @@ import {
     HoverCardTrigger,
 } from "@/components/ui/hover-card"
 import Link from "next/link"
+import Image from 'next/image';
 
 export default function Orders() {
     return (
@@ -88,7 +89,6 @@ export default function Orders() {
                 <Separator className="my-4" />
             </div>
             <div className="flex justify-center p-4">
-                {/* <div className={styles.p1}> */}
                 <div className='flex gap-4'>
                     2 orders placed in
                     <Select>
@@ -108,86 +108,93 @@ export default function Orders() {
                     </Select>
                     <Input type="searchallorders" placeholder="Search all orders" className="w-[500px]" />
                 </div>
-
-                {/* </div> */}
-                
                 <Button about='Search all orders' aria-label='Search all orders' variant='default'>
                     <Search height={200} width={200} />
                 </Button>
             </div>
             <div className="flex">
-                <Card className="w-[700px]">
-                    <div className="flex justify-between h-8 space-x-1 text-sm">
-                        <div className={styles.p1}>
-                            Order placed
-                            January 11, 2025</div>
-                        <Separator orientation="vertical" />
-                        <div className={styles.p1}>
-                            Total $59.09
-                        </div>
-                        <Separator orientation="vertical" />
-                        <HoverCard>
-                            <div className='flex flex-col gap-2'>
+                <Card className="w-[950px]">
+                    <CardHeader className='pb-0'>
+                        <div className="flex justify-between col-center h-12 space-x-1 text-sm pb-2">
+                            <div className='flex flex-col'>
                                 <Label>
-                                    Ship to
+                                    Order placed
                                 </Label>
-                                <HoverCardTrigger about='test'>
-                                    Saori Shigehisa
-                                </HoverCardTrigger>
-                                <HoverCardContent>
-                                    2222 W BEARDSLEY RD APT 2047
-                                    PHOENIX, AZ 85027-3451
-                                    United States
-                                </HoverCardContent>
+                                <div className={styles.p2}>
+                                    January 11, 2025</div>
                             </div>
-                        </HoverCard>
-                        <Separator orientation="vertical" />
-                        <div className={styles.p1}>
-                            <Link href='/orderdetails'>Order details</Link>
+                            <Separator orientation="vertical" />
+                            <div className='flex flex-col'>
+                            <Label>
+                                Total
+                            </Label>
+                            <div className={styles.p2}>
+                                $59.09
+                            </div>
+                            </div>
+                            <Separator orientation="vertical" />
+                            <HoverCard>
+                                <div className='flex flex-col'>
+                                    <Label>
+                                        Ship to
+                                    </Label>
+                                    <HoverCardTrigger about='test'>
+                                        <Button variant="link" className="pt-0 pb-2 pl-0 pr-0">Saori Shigehisa</Button>
+                                    </HoverCardTrigger>
+                                    <HoverCardContent>
+                                        2222 W BEARDSLEY RD APT 2047
+                                        PHOENIX, AZ 85027-3451
+                                        United States
+                                    </HoverCardContent>
+                                </div>
+                            </HoverCard>
+                            <Separator orientation="vertical" />
+                            <div className={styles.p1}>
+                                <Button variant="link">
+                                    <Link href='/orderdetails'>Order details</Link>
+                                </Button>
+                            </div>
+                            <Separator orientation="vertical" />
+                            <div className={styles.p1}>
+                                <Button variant="link">
+                                    <Link href='/invoice'>Invoice</Link>
+                                </Button>
+                            </div>
                         </div>
-                        <Separator orientation="vertical" />
-                        <div className={styles.p1}>
-                        <Link href='/invoice'>Invoice</Link>
-                        </div>
-                        <Separator orientation="vertical" />
-                    </div>
-                    <div className="border-t border-gray-300 my-4"></div>
-                    <CardHeader>
-                        <CardTitle>Arriving Thursday</CardTitle>
-                        <CardDescription>Shipped</CardDescription>
+                        <div className="border-t border-gray-300 my-4"></div>
                     </CardHeader>
                     <CardContent>
-                        <form>
-                            <div className="grid w-full items-center gap-4">
-                                <div className="flex flex-col space-y-1.5">
-                                    <Label htmlFor="name">Name</Label>
-                                    <Input id="name" placeholder="Name of your project" />
+                        <Button className="pb-9" variant="link">
+                            <Link href='/rectangleSunglasses'>
+                                <div className={styles.p3}>
+                                    Rectangle Sunglasses
                                 </div>
-                                <div className="flex flex-col space-y-1.5">
-                                    <Label htmlFor="framework">Framework</Label>
-                                    <Select>
-                                        <SelectTrigger id="framework">
-                                            <SelectValue placeholder="Select" />
-                                        </SelectTrigger>
-                                        <SelectContent position="popper">
-                                            <SelectItem value="next">Next.js</SelectItem>
-                                            <SelectItem value="sveltekit">SvelteKit</SelectItem>
-                                            <SelectItem value="astro">Astro</SelectItem>
-                                            <SelectItem value="nuxt">Nuxt.js</SelectItem>
-                                        </SelectContent>
-                                    </Select>
-                                </div>
-                            </div>
-                        </form>
+                            </Link>
+                        </Button>
+                        <CardTitle>Arriving Thursday</CardTitle>
+                        <CardDescription>Shipped</CardDescription>
+                        <Link href='/rectangleSunglasses'>
+                            <Image
+                                src="/Rectangle_Sunglasses.png"
+                                alt="Example Image"
+                                width={100}
+                                height={100}
+                            />
+                        </Link>
+                        <Label htmlFor="returnItems" className="">Return items: Eligible through February 15, 2025</Label>
                     </CardContent>
                     <CardFooter className="flex justify-between">
-                        <Button variant="outline">Cancel</Button>
-                        <Button>Deploy</Button>
+                        <Button>Track package</Button>
+                        <Button>Get product support</Button>
+                        <Button variant="outline">Reurn items</Button>
+                        <Button variant="outline">Share gift receipt</Button>
+                        <Button variant="outline">Leave seller feedback</Button>
+                        <Button variant="outline">Write a product review</Button>
                     </CardFooter>
                 </Card>
             </div>
             <div className="flex">
-                <Card className="w-[700px]">
+                <Card className="w-[950px]">
                     <CardHeader>
                         <CardTitle>Delivered December 30</CardTitle>
                         <CardDescription>Your package was left near the front door or porch.</CardDescription>
