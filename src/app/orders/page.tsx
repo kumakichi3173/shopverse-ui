@@ -114,8 +114,6 @@ export default function Orders() {
             </div>
 
             <div className="flex flex-col items-center">
-
-
                 <div className="flex">
                     <Card className="w-[950px]">
                         <CardHeader className='pb-0'>
@@ -199,10 +197,6 @@ export default function Orders() {
                         </CardFooter>
                     </Card>
                 </div>
-
-
-
-
                 <div className="flex">
                     <Card className="w-[950px]">
                         <CardHeader className='pb-0'>
@@ -288,9 +282,18 @@ export default function Orders() {
                         </CardFooter>
                     </Card>
                 </div>
-
+                {/* TODO: make this footer */}
+                <Separator className="my-4" />
+                <div className="flex gap-4 justify-center">
+                    <Link className={styles.footermenu} href="/privacy&terms">Privacy & Terms</Link>
+                    <Link className={styles.footermenu} href="/contactUs">Contact Us</Link>
+                    <Link className={styles.footermenu} href="/changeRegion">Consumer health</Link>
+                    <Link className={styles.footermenu} href="/changeRegion">Your Privacy Choices</Link>
+                </div>
+                <div className="flex justify-center">
+                    2024 SSS Corp.
+                </div>
             </div>
-
         </>
     )
 }
