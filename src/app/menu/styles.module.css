@@ -1,9 +1,15 @@
-.buttoncontainer {
-    /* TODO: working on this for the futute */
-    display: flex;
-    width: 100%;
-    padding: 5px;
-    /* Center horizontally */
-    justify-content: center; 
-    align-items: center;
+/*
+ * Copyright (c) 2025 - Shiny Superb Star
+ * All rights reserved.
+ *
+ * This file is the property of Shiny Superb Star.
+ * Unauthorized use, copying, or distribution is strictly prohibited.
+ * Shiny Superb Star reserves the right to take legal action
+ * against any person or entity who makes use of this file without the
+ * express written permission of Shiny Superb Star.
+ * 
+ */
+
+.footermenu{
+    text-decoration: underline;
 }

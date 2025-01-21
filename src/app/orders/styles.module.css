@@ -9,16 +9,19 @@
 }
 .p1 {
     display: flex;
-    width: 100%;
     padding: 5px;
     justify-content: center; 
     align-items: center;
 }
-.buttoncontainer {
+.p2 {
     display: flex;
-    width: 
-    100%;
+    padding: 5px 0px 0px 0px;
+    text-align: left; 
+}
+.p3 {
     padding: 5px;
-    justify-content: center; /* Center horizontally */
-    align-items: center;
+    font-size: 18px;
+    text-align: left;
+    position: absolute;
+    left: 20;
 }
