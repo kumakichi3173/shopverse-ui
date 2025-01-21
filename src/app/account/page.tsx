@@ -123,7 +123,7 @@ export default function Account() {
                     <Link className={styles.footermenu} href="/changeRegion">Consumer health</Link>
                     <Link className={styles.footermenu} href="/changeRegion">Your Privacy Choices</Link>
                 </div>
-                <p>&copy; 22024 SSS Corp. All rights reserved.</p>
+                <p>&copy; 2024 SSS Corp. All rights reserved.</p>
             </footer>
         </>
     );
