@@ -102,7 +102,7 @@ export default function Account() {
                     <Link href="/orders">
                         <Button variant="outline" className="w-[410px] h-[90px]">
                             <CardHeader>
-                                <CardTitle>Yor messages</CardTitle>
+                                <CardTitle>Your messages</CardTitle>
                                 <CardDescription>View, or respond to messages from us, sellers, and buyers</CardDescription>
                             </CardHeader>
                         </Button>
