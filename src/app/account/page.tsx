@@ -14,7 +14,6 @@ import { Button } from "@/components/ui/button"
 import Link from 'next/link';
 import styles from './styles.module.css'
 import {
-    Card,
     CardDescription,
     CardHeader,
     CardTitle,
@@ -25,7 +24,6 @@ export default function Account() {
         <>
             <h1 className={styles.h1}>Your Account</h1>
             <div className="grid grid-cols-3 gap-5 pl-20 pr-20">
-                {/* Component 1 */}
                 <div>
                     <Link href="/orders">
                         <Button variant="outline" className="w-[410px] h-[90px]">
@@ -36,8 +34,6 @@ export default function Account() {
                         </Button>
                     </Link>
                 </div>
-
-                {/* Component 2 */}
                 <div>
                     <Link href="/editLogin">
                         <Button variant="outline" className="w-[410px] h-[90px]">
@@ -48,8 +44,6 @@ export default function Account() {
                         </Button>
                     </Link>
                 </div>
-
-                {/* Component 3 */}
                 <div>
                     <Link href="/adresses">
                         <Button variant="outline" className="w-[410px] h-[90px]">
@@ -60,8 +54,6 @@ export default function Account() {
                         </Button>
                     </Link>
                 </div>
-
-                {/* Component 4 */}
                 <div>
                     <Link href="/payment">
                         <Button variant="outline" className="w-[410px] h-[90px]">
@@ -72,8 +64,6 @@ export default function Account() {
                         </Button>
                     </Link>
                 </div>
-
-                {/* Component 5 */}
                 <div>
                     <Link href="/archived">
                         <Button variant="outline" className="w-[410px] h-[90px]">
@@ -84,8 +74,6 @@ export default function Account() {
                         </Button>
                     </Link>
                 </div>
-
-                {/* Component 6 */}
                 <div>
                     <Link href="/lists">
                         <Button variant="outline" className="w-[410px] h-[90px]">
@@ -96,8 +84,6 @@ export default function Account() {
                         </Button>
                     </Link>
                 </div>
-
-                {/* Component 7 */}
                 <div>
                     <Link href="/orders">
                         <Button variant="outline" className="w-[410px] h-[90px]">
@@ -108,7 +94,6 @@ export default function Account() {
                         </Button>
                     </Link>
                 </div>
-
                 {/* Empty space to fill the grid */}
                 <div>
                     {/* Placeholder for empty space */}
