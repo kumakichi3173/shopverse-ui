@@ -48,7 +48,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
         <Header />
-        <main style={{ flex: 1 }}>
+        <main className="flex-1">
           {children}
         </main>
         <Footer />

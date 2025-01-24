@@ -98,7 +98,6 @@ export default function LogInModal() {
                         </div>
                     </div>
                 </DialogDescription>
-
             </DialogContent>
         </Dialog>
     )
