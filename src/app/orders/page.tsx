@@ -112,122 +112,187 @@ export default function Orders() {
                     <Search height={200} width={200} />
                 </Button>
             </div>
-            <div className="flex">
-                <Card className="w-[950px]">
-                    <CardHeader className='pb-0'>
-                        <div className="flex justify-between col-center h-12 space-x-1 text-sm pb-2">
-                            <div className='flex flex-col'>
-                                <Label>
-                                    Order placed
-                                </Label>
-                                <div className={styles.p2}>
-                                    January 11, 2025</div>
-                            </div>
-                            <Separator orientation="vertical" />
-                            <div className='flex flex-col'>
-                            <Label>
-                                Total
-                            </Label>
-                            <div className={styles.p2}>
-                                $59.09
-                            </div>
-                            </div>
-                            <Separator orientation="vertical" />
-                            <HoverCard>
+
+            <div className="flex flex-col items-center">
+                <div className="flex">
+                    <Card className="w-[950px]">
+                        <CardHeader className='pb-0'>
+                            <div className="flex justify-between col-center h-12 space-x-1 text-sm pb-2">
+                                <Separator orientation="vertical" className="opacity-0" />
                                 <div className='flex flex-col'>
                                     <Label>
-                                        Ship to
+                                        Order placed
                                     </Label>
-                                    <HoverCardTrigger about='test'>
-                                        <Button variant="link" className="pt-0 pb-2 pl-0 pr-0">Saori Shigehisa</Button>
-                                    </HoverCardTrigger>
-                                    <HoverCardContent>
-                                        2222 W BEARDSLEY RD APT 2047
-                                        PHOENIX, AZ 85027-3451
-                                        United States
-                                    </HoverCardContent>
+                                    <div className={styles.p2}>
+                                        January 11, 2025</div>
                                 </div>
-                            </HoverCard>
-                            <Separator orientation="vertical" />
-                            <div className={styles.p1}>
-                                <Button variant="link">
-                                    <Link href='/orderdetails'>Order details</Link>
-                                </Button>
+                                <Separator orientation="vertical" />
+                                <div className='flex flex-col'>
+                                    <Label>
+                                        Total
+                                    </Label>
+                                    <div className={styles.p2}>
+                                        $59.09
+                                    </div>
+                                </div>
+                                <Separator orientation="vertical" />
+                                <HoverCard>
+                                    <div className='flex flex-col'>
+                                        <Label>
+                                            Ship to
+                                        </Label>
+                                        <HoverCardTrigger about='test'>
+                                            <Button variant="link" className="pt-0 pb-2 pl-0 pr-0">Saori Shigehisa</Button>
+                                        </HoverCardTrigger>
+                                        <HoverCardContent>
+                                            2222 W BEARDSLEY RD APT 2047
+                                            PHOENIX, AZ 85027-3451
+                                            United States
+                                        </HoverCardContent>
+                                    </div>
+                                </HoverCard>
+                                <Separator orientation="vertical" />
+                                <div className={styles.p1}>
+                                    <Button variant="link">
+                                        <Link href='/orderdetails'>Order details</Link>
+                                    </Button>
+                                </div>
+                                <Separator orientation="vertical" />
+                                <div className={styles.p1}>
+                                    <Button variant="link">
+                                        <Link href='/invoice'>Invoice</Link>
+                                    </Button>
+                                </div>
+                                <Separator orientation="vertical" className="opacity-0" />
                             </div>
-                            <Separator orientation="vertical" />
-                            <div className={styles.p1}>
-                                <Button variant="link">
-                                    <Link href='/invoice'>Invoice</Link>
-                                </Button>
-                            </div>
-                        </div>
-                        <div className="border-t border-gray-300 my-4"></div>
-                    </CardHeader>
-                    <CardContent>
-                        <Button className="pb-9" variant="link">
+                            <div className="border-t border-gray-300 my-4"></div>
+                        </CardHeader>
+                        <CardContent>
+                            <Button className="pb-9 pl-0" variant="link">
+                                <Link href='/rectangleSunglasses'>
+                                    <div className={styles.p3}>
+                                        Rectangle Sunglasses
+                                    </div>
+                                </Link>
+                            </Button>
+                            <CardTitle>Arriving Thursday</CardTitle>
+                            <CardDescription>Shipped</CardDescription>
                             <Link href='/rectangleSunglasses'>
-                                <div className={styles.p3}>
-                                    Rectangle Sunglasses
-                                </div>
+                                <Image
+                                    src="/Rectangle_Sunglasses.png"
+                                    alt="Example Image"
+                                    width={100}
+                                    height={100}
+                                />
                             </Link>
-                        </Button>
-                        <CardTitle>Arriving Thursday</CardTitle>
-                        <CardDescription>Shipped</CardDescription>
-                        <Link href='/rectangleSunglasses'>
-                            <Image
-                                src="/Rectangle_Sunglasses.png"
-                                alt="Example Image"
-                                width={100}
-                                height={100}
-                            />
-                        </Link>
-                        <Label htmlFor="returnItems" className="">Return items: Eligible through February 15, 2025</Label>
-                    </CardContent>
-                    <CardFooter className="flex justify-between">
-                        <Button>Track package</Button>
-                        <Button>Get product support</Button>
-                        <Button variant="outline">Reurn items</Button>
-                        <Button variant="outline">Share gift receipt</Button>
-                        <Button variant="outline">Leave seller feedback</Button>
-                        <Button variant="outline">Write a product review</Button>
-                    </CardFooter>
-                </Card>
-            </div>
-            <div className="flex">
-                <Card className="w-[950px]">
-                    <CardHeader>
-                        <CardTitle>Delivered December 30</CardTitle>
-                        <CardDescription>Your package was left near the front door or porch.</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                        <form>
-                            <div className="grid w-full items-center gap-4">
-                                <div className="flex flex-col space-y-1.5">
-                                    <Label htmlFor="name">Name</Label>
-                                    <Input id="name" placeholder="Name of your project" />
+                            <Label htmlFor="returnItems" className="">Return items: Eligible through February 15, 2025</Label>
+                        </CardContent>
+                        <CardFooter className="flex justify-between">
+                            <Button>Track package</Button>
+                            <Button>Get product support</Button>
+                            <Button variant="outline">Reurn items</Button>
+                            <Button variant="outline">Share gift receipt</Button>
+                            <Button variant="outline">Leave seller feedback</Button>
+                            <Button variant="outline">Write a product review</Button>
+                        </CardFooter>
+                    </Card>
+                </div>
+                <div className="flex">
+                    <Card className="w-[950px]">
+                        <CardHeader className='pb-0'>
+                            <div className="flex justify-between col-center h-12 space-x-1 text-sm pb-2">
+                                <Separator orientation="vertical" className="opacity-0" />
+                                <div className='flex flex-col'>
+                                    <Label>
+                                        Order placed
+                                    </Label>
+                                    <div className={styles.p2}>
+                                        January 11, 2025</div>
                                 </div>
-                                <div className="flex flex-col space-y-1.5">
-                                    <Label htmlFor="framework">Framework</Label>
-                                    <Select>
-                                        <SelectTrigger id="framework">
-                                            <SelectValue placeholder="Select" />
-                                        </SelectTrigger>
-                                        <SelectContent position="popper">
-                                            <SelectItem value="next">Next.js</SelectItem>
-                                            <SelectItem value="sveltekit">SvelteKit</SelectItem>
-                                            <SelectItem value="astro">Astro</SelectItem>
-                                            <SelectItem value="nuxt">Nuxt.js</SelectItem>
-                                        </SelectContent>
-                                    </Select>
+                                <Separator orientation="vertical" />
+                                <div className='flex flex-col'>
+                                    <Label>
+                                        Total
+                                    </Label>
+                                    <div className={styles.p2}>
+                                        $59.09
+                                    </div>
                                 </div>
+                                <Separator orientation="vertical" />
+                                <HoverCard>
+                                    <div className='flex flex-col'>
+                                        <Label>
+                                            Ship to
+                                        </Label>
+                                        <HoverCardTrigger about='test'>
+                                            <Button variant="link" className="pt-0 pb-2 pl-0 pr-0">Saori Shigehisa</Button>
+                                        </HoverCardTrigger>
+                                        <HoverCardContent>
+                                            2222 W BEARDSLEY RD APT 2047
+                                            PHOENIX, AZ 85027-3451
+                                            United States
+                                        </HoverCardContent>
+                                    </div>
+                                </HoverCard>
+                                <Separator orientation="vertical" />
+                                <div className={styles.p1}>
+                                    <Button variant="link">
+                                        <Link href='/orderdetails'>Order details</Link>
+                                    </Button>
+                                </div>
+                                <Separator orientation="vertical" />
+                                <div className={styles.p1}>
+                                    <Button variant="link">
+                                        <Link href='/invoice'>Invoice</Link>
+                                    </Button>
+                                </div>
+                                <Separator orientation="vertical" className="opacity-0" />
                             </div>
-                        </form>
-                    </CardContent>
-                    <CardFooter className="flex justify-between">
-                        <Button variant="outline">Cancel</Button>
-                        <Button>Deploy</Button>
-                    </CardFooter>
-                </Card>
+                            <div className="border-t border-gray-300 my-4"></div>
+                        </CardHeader>
+                        <CardContent>
+                            <Button className="pb-9 pl-0" variant="link">
+                                <Link href='/rectangleSunglasses'>
+                                    <div className={styles.p3}>
+                                        Milliard Citric Acid 10 Pound
+                                    </div>
+                                </Link>
+                            </Button>
+                            <CardTitle>Delivered December 30
+                            </CardTitle>
+                            <CardDescription>Your package was left near the front door or porch.
+                            </CardDescription>
+                            <Link href='/Milliard Citric Acid 10 Pound.png'>
+                                <Image
+                                    src="/Milliard Citric Acid 10 Pound.png"
+                                    alt="Example Image"
+                                    width={100}
+                                    height={100}
+                                />
+                            </Link>
+                            <Label htmlFor="returnItems" className="">Return items: Eligible through February 15, 2025</Label>
+                        </CardContent>
+                        <CardFooter className="flex justify-between">
+                            <Button>Track package</Button>
+                            <Button>Get product support</Button>
+                            <Button variant="outline">Reurn items</Button>
+                            <Button variant="outline">Share gift receipt</Button>
+                            <Button variant="outline">Leave seller feedback</Button>
+                            <Button variant="outline">Write a product review</Button>
+                        </CardFooter>
+                    </Card>
+                </div>
+                {/* TODO: make this footer */}
+                <Separator className="my-4" />
+                <div className="flex gap-4 justify-center">
+                    <Link className={styles.footermenu} href="/privacy&terms">Privacy & Terms</Link>
+                    <Link className={styles.footermenu} href="/contactUs">Contact Us</Link>
+                    <Link className={styles.footermenu} href="/changeRegion">Consumer health</Link>
+                    <Link className={styles.footermenu} href="/changeRegion">Your Privacy Choices</Link>
+                </div>
+                <div className="flex justify-center">
+                    2024 SSS Corp.
+                </div>
             </div>
         </>
     )

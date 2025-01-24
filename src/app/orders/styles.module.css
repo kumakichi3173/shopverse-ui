@@ -21,7 +21,9 @@
 .p3 {
     padding: 5px;
     font-size: 18px;
-    text-align: left;
+    text-align: left; 
     position: absolute;
-    left: 20;
+}
+.footermenu{
+    text-decoration: underline;
 }
