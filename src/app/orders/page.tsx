@@ -57,7 +57,7 @@ export default function Orders() {
             <Breadcrumb>
                 <BreadcrumbList>
                     <BreadcrumbItem>
-                        <BreadcrumbLink href="/docs/components">Your account</BreadcrumbLink>
+                        <BreadcrumbLink href="/account">Your account</BreadcrumbLink>
                     </BreadcrumbItem>
                     <BreadcrumbSeparator />
                     <BreadcrumbItem>
@@ -281,17 +281,6 @@ export default function Orders() {
                             <Button variant="outline">Write a product review</Button>
                         </CardFooter>
                     </Card>
-                </div>
-                {/* TODO: make this footer */}
-                <Separator className="my-4" />
-                <div className="flex gap-4 justify-center">
-                    <Link className={styles.footermenu} href="/privacy&terms">Privacy & Terms</Link>
-                    <Link className={styles.footermenu} href="/contactUs">Contact Us</Link>
-                    <Link className={styles.footermenu} href="/changeRegion">Consumer health</Link>
-                    <Link className={styles.footermenu} href="/changeRegion">Your Privacy Choices</Link>
-                </div>
-                <div className="flex justify-center">
-                    2024 SSS Corp.
                 </div>
             </div>
         </>
