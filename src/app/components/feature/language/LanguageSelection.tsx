@@ -26,8 +26,8 @@ export default function LanguageSelection() {
     return (
         <Popover open={open} onOpenChange={setOpen}>
             <PopoverTrigger asChild>
-                <Button
-                    variant="outline"
+                <Button 
+                    variant="ghost"
                     role="combobox"
                     aria-expanded={open}
                     className="justify-between"
