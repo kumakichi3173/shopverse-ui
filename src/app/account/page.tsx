@@ -99,17 +99,6 @@ export default function Account() {
                     {/* Placeholder for empty space */}
                 </div>
             </div>
-
-            <footer className="text-center py-4 mt-auto">
-                <div className="border-t border-gray-300 my-4"></div>
-                <div className="flex gap-4 justify-center">
-                    <Link className={styles.footermenu} href="/privacy&terms">Privacy & Terms</Link>
-                    <Link className={styles.footermenu} href="/contactUs">Contact Us</Link>
-                    <Link className={styles.footermenu} href="/changeRegion">Consumer health</Link>
-                    <Link className={styles.footermenu} href="/changeRegion">Your Privacy Choices</Link>
-                </div>
-                <p>&copy; 2024 SSS Corp. All rights reserved.</p>
-            </footer>
         </>
     );
 };

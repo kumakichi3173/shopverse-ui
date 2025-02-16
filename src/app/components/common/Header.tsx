@@ -13,22 +13,24 @@
 import { Search, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Heart, ShoppingCart } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import LogInModal from "../feature/login/LogInModal";
 import LanguageSelection from "../feature/language/LanguageSelection";
 
 export default function Header() {
     return (
-        <div className="flex justify-between px-10 pt-8 pb-4">
-            <Link href="/">
+        <div className="grid grid-cols-3 px-10 pt-8 pb-4">
+            <Link className="flex justify-center" href="/">
                 <Image
-                    src="/SHOPVERSE_logo.png" // Image path in the `public` folder
+                    // Image path in the `public` folder
+                    src="/SHOPVERSE_logo.png"
                     alt="Example Image"
-                    width={500} // Set the width
-                    height={100} // Set the height
+                    // Set the width
+                    width={500}
+                    // Set the height
+                    height={100}
                 />
             </Link>
             <div className="flex items-center justify-self-end">
