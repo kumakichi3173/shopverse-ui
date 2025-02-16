@@ -23,7 +23,7 @@ export default function Footer() {
                 <Link className="underline" href="/changeRegion">Your Privacy Choices</Link>
             </div>
             <div className="flex justify-center">
-                2024 SSS Corp.
+            <p>&copy; 2024 SSS Corp. All rights reserved.</p>
             </div>
         </div>
     )

@@ -22,8 +22,6 @@ import LanguageSelection from "../feature/language/LanguageSelection";
 export default function Header() {
     return (
         <div className="grid grid-cols-3 px-10 pt-8 pb-4">
-            <div>
-            </div>
             <Link className="flex justify-center" href="/">
                 <Image
                     // Image path in the `public` folder
